@@ -10,9 +10,9 @@ import java.awt.*;
 
 public class ExampleScreen extends JComponent {
     public static void initialize() {
-        Frame frame = EmbeddedFrameUtil.embeddedFrameCreate(GLFW.glfwGetCurrentContext());
-        frame.add(new ExampleScreen());
         Window window = MinecraftClient.getInstance().getWindow();
+        Frame frame = EmbeddedFrameUtil.embeddedFrameCreate(window.getHandle());
+        frame.add(new ExampleScreen());
         EmbeddedFrameUtil.placeAtCenter(frame, window.getWidth(), window.getHeight(), 100, 100, 1);
     }
 
