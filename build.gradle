@@ -31,6 +31,12 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+	implementation("org.lwjgl:lwjgl-jawt:3.3.1") {
+		exclude group: "org.lwjgl", module: "lwjgl"
+	}
+	include("org.lwjgl:lwjgl-jawt:3.3.1") {
+		exclude group: "org.lwjgl", module: "lwjgl"
+	}
 }
 
 processResources {
